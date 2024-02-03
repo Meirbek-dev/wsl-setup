@@ -18,7 +18,6 @@ alias jl='jupyter-lab'
 alias jn='jupyter-notebook'
 
 alias apti="sudo apt-get install"
-alias fif="flatpak install flathub"
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias cc="sudo apt autoremove -y"
 ```
@@ -62,20 +61,6 @@ dnfi gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-d
 nvidia-smi
 ```
 
-### Flatpaks & Flathub
-
-```bash
-# installing flatpak
-dnfi -y flatpak
-
-# adding flathub
-flatpak remote-modify --enable flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-fif org.jupyter.JupyterLab
-fif com.jetbrains.PyCharm-Professional
-```
-
 ### [Installing Anaconda](https://www.anaconda.com/download)
 
 ```bash
@@ -110,6 +95,12 @@ which pip
 
 ```bash
 apti python3-dev python3-pip
+```
+
+### Adding C support
+
+```bash
+apti gcc clang
 ```
 
 ### Removing the key before installing CUDA + cuDNN

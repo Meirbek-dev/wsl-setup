@@ -27,4 +27,3 @@ alias jn='jupyter-notebook'
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias cc="sudo apt autoremove -y"
 alias apti="sudo apt-get install"
-alias fif="flatpak install flathub"

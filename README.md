@@ -22,13 +22,6 @@ alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias cc="sudo apt autoremove -y"
 ```
 
-### Updating the distribution edition
-
-```bash
-sudo nano /etc/update-manager/release-upgrades # Change update channel from lts to normal
-sudo do-release-upgrade
-```
-
 ### Creating .hushlogin
 
 ```bash
@@ -42,17 +35,18 @@ up
 cc
 ```
 
+### Updating the distribution edition
+
+```bash
+sudo nano /etc/update-manager/release-upgrades # Change update channel from lts to normal
+sudo do-release-upgrade
+```
+
 ### Configuring git
 
 ```bash
 git config --global user.name "Meirbek"
 git config --global user.email "meirbek@email.com"
-```
-
-### Installing proprietary NVIDIA drivers with CUDA
-
-```bash
-dnfi gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-power xorg-x11-drv-nvidia-cuda nvidia-settings
 ```
 
 ### Checking Nvidia GPU Information in WSL
@@ -134,6 +128,8 @@ conda install jupyterlab notebook nb_conda_kernels chardet
 
 ### Creating conda environment with TensorFlow + CUDA in WSL
 
+[Tensorflow installation docs](https://www.tensorflow.org/install/pip)
+
 ```bash
 conda create -n fras pip python=3.11
 conda activate fras
@@ -176,18 +172,20 @@ export TF_CPP_MIN_LOG_LEVEL=1
 
 ### Pulling offical TensorFlow Docker image
 
+[Offical TensorFlow Docker image](https://hub.docker.com/r/tensorflow/tensorflow/)
+
 ```bash
 docker pull tensorflow/tensorflow
 
 ```
 
-### Run container with GPU support and Python interpreter.
+### Run container with GPU support and Python interpreter
 
 ```bash
 docker run -it --rm --gpus all tensorflow/tensorflow:latest-gpu python
 ```
 
-### Run Jupyter Notebook Server with GPU support and Python interpreter.
+### Run Jupyter Notebook Server with GPU support and Python interpreter
 
 ```bash
 docker run -it --rm --gpus all -v $(realpath ~/notebooks):/tf/notebooks -p 8888:8888 tensorflow/tensorflow:latest-gpu-jupyter

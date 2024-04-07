@@ -111,6 +111,24 @@ mkdir crash-reprod
 export MLIR_CRASH_REPRODUCER_DIRECTORY=/home/meirb/crash-reprod
 ```
 
+### Install Node using NVM
+
+[NVM Repo](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+nvm list
+nvm install node
+```
+
+### Install JS tooling
+
+```bash
+npm -g install @biomejs/biome prettier corepack npm-check-updates npm yarn pnpm deno bun typescript
+```
+
 ### Installing Language Server Protocols and python formatters
 
 ```bash

@@ -19,11 +19,22 @@ unset __conda_setup
 # manually added
 
 alias bashrc="nvim ~/.bashrc"
+alias zshrc="nvim ~/.zshrc"
 alias c="code"
 alias n="nvim"
 alias jl='jupyter-lab'
 alias jn='jupyter-notebook'
 
+# Changing "ls" to "exa"
+alias ls='exa --icons --color=always --group-directories-first'
+alias ll='exa -alF --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias l='exa -F --icons --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
+
+alias apti="sudo apt-get install"
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias cc="sudo apt autoremove -y"
-alias apti="sudo apt-get install"
+
+export TF_CPP_MIN_LOG_LEVEL=1
+export PATH=$PATH:/home/squoz/apps/nvim/bin

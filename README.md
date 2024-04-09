@@ -12,6 +12,7 @@ nano ~/.bashrc
 
 ```bash
 alias bashrc="nvim ~/.bashrc"
+alias zshrc="nvim ~/.zshrc"
 alias c="code"
 alias n="nvim"
 alias jl='jupyter-lab'
@@ -85,16 +86,12 @@ conda install pip
 which pip
 ```
 
-### Installing the required Python dependenices
+### Installing Java, Python & C tools
 
 ```bash
 apti python3-dev python3-pip
-```
-
-### Adding C support
-
-```bash
 apti gcc clang
+apti default-jre default-jdk
 ```
 
 ### Removing the key before installing CUDA + cuDNN
@@ -126,14 +123,14 @@ nvm install node
 ### Install JS tooling
 
 ```bash
-npm -g install @biomejs/biome prettier corepack npm-check-updates npm yarn pnpm deno bun typescript
+npm -g install @biomejs/biome oxlint tslint depcheck npm-check-updates typescript prettier pnpm yarn pnpm deno bun eslint corepack
 ```
 
 ### Installing Language Server Protocols and python formatters
 
 ```bash
 npm install bash-language-server
-pip install python-language-server # Does not support Python 3.11+
+pip install python-language-server ruff
 pip install --upgrade jupyter_lsp notebook_shim chardet
 pip install pycodestyle mccabe pyflakes pylint rope yapf autopep8 pydocstyle
 ```

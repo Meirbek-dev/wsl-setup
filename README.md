@@ -2,27 +2,6 @@
 
 ## WSL (Ubuntu) configuration for machine learning using TensorFlow with CUDA
 
-### Open runcom file
-
-```bash
-nano ~/.bashrc
-```
-
-### And add aliases at the bottom
-
-```bash
-alias bashrc="nvim ~/.bashrc"
-alias zshrc="nvim ~/.zshrc"
-alias c="code"
-alias n="nvim"
-alias jl='jupyter-lab'
-alias jn='jupyter-notebook'
-
-alias apti="sudo apt-get install"
-alias up='sudo apt-get update && sudo apt-get upgrade -y'
-alias cc="sudo apt autoremove -y"
-```
-
 ### Creating .hushlogin
 
 ```bash
@@ -59,7 +38,6 @@ nvidia-smi
 ### [Installing Anaconda](https://www.anaconda.com/download)
 
 ```bash
-wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
 chmod +x Anaconda*.sh
 bash ./Anaconda*.sh -b -u
 rm Anaconda*.sh
